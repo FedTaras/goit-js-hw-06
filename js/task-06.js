@@ -5,7 +5,10 @@ inputRef.addEventListener("blur", () => {
   if (inputRef.value.length === Number(count)) {
     inputRef.classList.add("valid");
   } else {
-    inputRef.classList.remove("valid");
     inputRef.classList.add("invalid");
   }
+});
+inputRef.addEventListener("focus", () => {
+  inputRef.classList.remove("invalid");
+  inputRef.classList.remove("valid");
 });
