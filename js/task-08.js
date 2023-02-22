@@ -10,6 +10,7 @@ formRef.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
+
   const {
     elements: { email, password },
   } = event.currentTarget;
@@ -18,6 +19,10 @@ function handleSubmit(event) {
     formRef.prepend(alert);
   }
 
-  console.log(`Login: ${email.value}, Password: ${password.value}`);
+  const emailUser = event.currentTarget.elements.email.value;
+  const passwordlUser = event.currentTarget.elements.password.value;
+  const objectData = { emailUser, passwordlUser };
+  console.log(objectData);
+
   event.currentTarget.reset();
 }
